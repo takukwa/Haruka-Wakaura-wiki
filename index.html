@@ -2,9 +2,10 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>[와카우라 하루카]</title>
+<title>캐릭터 위키</title>
 
 <style>
+/* ===== 기본 설정 ===== */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -12,156 +13,185 @@ body {
   color: #202020;
 }
 
-/* 전체 폭 */
-.wrapper {
-  max-width: 1100px;
+a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* ===== 전체 폭 (지금 보여준 화면이 전체의 절반 기준) ===== */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* 제목 */
-.title {
-  font-size: 28px;
-  font-weight: bold;
-  border-bottom: 2px solid #a2a9b1;
-  padding-bottom: 6px;
-}
-
-.category {
-  color: #54595d;
-  font-size: 14px;
-  margin: 6px 0 18px 0;
-}
-
-/* 목차 + 인물 정보 박스 줄 */
-.top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-/* 목차 (기존의 2/5 크기) */
-.toc {
-  width: 80px;
-  border: 1px solid #a2a9b1;
-  padding: 8px;
-  font-size: 13px;
-}
-
-.toc b {
-  display: block;
+/* ===== 문서 제목 ===== */
+.doc-title {
+  font-size: 36px;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
-.toc a {
-  display: block;
-  text-decoration: none;
-  color: #0645ad;
+/* ===== 최근 수정 ===== */
+.last-edit {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+/* ===== 분류 ===== */
+.category {
+  font-size: 14px;
+  padding: 8px 10px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* ===== 메인 레이아웃 ===== */
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== 목차 (왼쪽) ===== */
+.toc {
+  width: 200px; /* 나무위키 목차 폭 */
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  height: fit-content;
+}
+
+.toc-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc li {
   margin: 4px 0;
 }
 
-/* 인물 정보 박스 (전체의 1/3) */
+/* ===== 본문 ===== */
+.content {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===== 인물 정보 박스 (오른쪽) ===== */
 .infobox {
-  width: 33.333%;
-  border: 1px solid #a2a9b1;
-  font-size: 14px;
+  width: 360px; /* 전체 화면의 약 1/3 */
+  border: 1px solid #ddd;
+  background: #fff;
 }
 
 .infobox-header {
-  background: #f39800;
-  color: #ffffff;
+  background: #ff9f1a; /* 나무위키 캐릭터 박스 느낌 */
+  color: #fff;
   text-align: center;
-  padding: 8px;
-  font-weight: bold;
+  font-weight: 700;
+  padding: 10px;
 }
 
-.infobox table {
-  width: 100%;
-  border-collapse: collapse;
+.infobox-body {
+  padding: 10px;
+  font-size: 14px;
 }
 
-.infobox th {
-  background: #f39800;
-  color: #ffffff;
-  text-align: left;
+.infobox-row {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.infobox-row:first-child {
+  border-top: none;
+}
+
+.infobox-key {
+  width: 35%;
+  background: #f7f7f7;
   padding: 6px;
-  width: 40%;
+  font-weight: 600;
 }
 
-.infobox td {
+.infobox-value {
+  width: 65%;
   padding: 6px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-/* 본문 */
-.content h2 {
-  border-bottom: 1px solid #a2a9b1;
-  padding-bottom: 4px;
-  margin-top: 30px;
-}
-
-.content p {
-  line-height: 1.7;
 }
 </style>
 </head>
 
 <body>
-<div class="wrapper">
+<div class="container">
 
-  <div class="title">[와카우라 하루카]</div>
-  <div class="category">분류: [주술회전/자작 캐릭터]</div>
+  <!-- 문서 제목 -->
+  <div class="doc-title">캐릭터 이름</div>
+  <div class="last-edit">최근 수정 시각: XXXX-XX-XX XX:XX:XX</div>
 
-  <div class="top-row">
+  <!-- 분류 -->
+  <div class="category">
+    분류: <a href="#">분류1</a> | <a href="#">분류2</a> | <a href="#">분류3</a>
+  </div>
 
-    <div class="toc">
-      <b>목차</b>
-      <a href="#overview">1. 개요</a>
-      <a href="#appearance">2. 성격</a>
-      <a href="#personality">3. 작중 행적</a>
-      <a href="#ability">4. 능력과 기술</a>
-      <a href="#history">5. 전적</a>
-      <a href="#trivia">6. 여담</a>
-    </div>
+  <!-- 본문 영역 -->
+  <div class="main">
 
-    <div class="infobox">
+    <!-- 목차 -->
+    <aside class="toc">
+      <div class="toc-title">목차</div>
+      <ul>
+        <li>1. 개요</li>
+        <li>2. 특징</li>
+        <li>2.1 외모</li>
+        <li>2.2 성격</li>
+        <li>3. 작중 행적</li>
+        <li>4. 인간관계</li>
+      </ul>
+    </aside>
+
+    <!-- 본문 -->
+    <section class="content">
+      <h2>1. 개요</h2>
+      <p>여기에 내용을 쓰면 됩니다.</p>
+
+      <h2>2. 특징</h2>
+      <p>여기도 본문 영역입니다.</p>
+    </section>
+
+    <!-- 인물 정보 박스 -->
+    <aside class="infobox">
       <div class="infobox-header">
-        [캐릭터 이름]<br>
-        [원어 표기]
+        캐릭터 이름<br>
+        <small>원어 표기</small>
       </div>
-      <table>
-        <tr><th>분류</th><td>[주술사 / 저주]</td></tr>
-        <tr><th>성별</th><td>[성별]</td></tr>
-        <tr><th>나이</th><td>[나이]</td></tr>
-        <tr><th>소속</th><td>[소속]</td></tr>
-        <tr><th>등급</th><td>[등급]</td></tr>
-        <tr><th>술식</th><td>[고유 술식]</td></tr>
-      </table>
-    </div>
+
+      <div class="infobox-body">
+        <div class="infobox-row">
+          <div class="infobox-key">분류</div>
+          <div class="infobox-value">캐릭터</div>
+        </div>
+
+        <div class="infobox-row">
+          <div class="infobox-key">소속</div>
+          <div class="infobox-value">미정</div>
+        </div>
+
+        <div class="infobox-row">
+          <div class="infobox-key">능력</div>
+          <div class="infobox-value">미정</div>
+        </div>
+      </div>
+    </aside>
 
   </div>
-
-  <div class="content">
-    <h2 id="overview">1. 개요</h2>
-    <p>[개요]</p>
-
-    <h2 id="appearance">2. 외형</h2>
-    <p>[외형]</p>
-
-    <h2 id="personality">3. 성격</h2>
-    <p>[성격]</p>
-
-    <h2 id="ability">4. 능력</h2>
-    <p>[능력]</p>
-
-    <h2 id="history">5. 작중 행적</h2>
-    <p>[행적]</p>
-
-    <h2 id="trivia">6. 여담</h2>
-    <p>[여담]</p>
-  </div>
-
 </div>
 </body>
 </html>
