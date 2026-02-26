@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>[캐릭터 이름]</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 왼쪽 목차 */
+.toc {
+  width: 220px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  height: fit-content;
+}
+
+.toc h3 {
+  margin-top: 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #0645ad;
+  display: block;
+  margin: 4px 0;
+}
+
+/* 본문 */
+.content {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.content h1 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+}
+
+/* 인물 정보 박스 */
+.infobox {
+  width: 260px;
+  border: 1px solid #ddd;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.infobox-header {
+  background: #f39800;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.infobox img {
+  width: 100%;
+}
+
+.infobox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.infobox th {
+  background: #f39800;
+  color: white;
+  padding: 6px;
+  text-align: left;
+  width: 40%;
+}
+
+.infobox td {
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- 목차 -->
+  <div class="toc">
+    <h3>목차</h3>
+    <a href="#overview">1. 개요</a>
+    <a href="#appearance">2. 외형</a>
+    <a href="#personality">3. 성격</a>
+    <a href="#abilities">4. 능력</a>
+    <a href="#relations">5. 인간관계</a>
+    <a href="#trivia">6. 여담</a>
+  </div>
+
+  <!-- 본문 -->
+  <div class="content">
+    <h1>[캐릭터 이름]</h1>
+
+    <h2 id="overview">1. 개요</h2>
+    <p>
+      <b>[캐릭터 이름]</b>는 주술회전 세계관을 기반으로 한 자작 캐릭터이다.
+      [한 문장 요약].
+    </p>
+
+    <h2 id="appearance">2. 외형</h2>
+    <p>[외형 설명]</p>
+
+    <h2 id="personality">3. 성격</h2>
+    <p>[성격 설명]</p>
+
+    <h2 id="abilities">4. 능력</h2>
+    <p>[술식 / 영역 전개 설명]</p>
+
+    <h2 id="relations">5. 인간관계</h2>
+    <p>[인물 관계]</p>
+
+    <h2 id="trivia">6. 여담</h2>
+    <p>[여담]</p>
+  </div>
+
+  <!-- 인물 정보 박스 -->
+  <div class="infobox">
+    <div class="infobox-header">
+      [캐릭터 이름]<br>
+      [원어 표기]
+    </div>
+
+    <!-- 이미지 넣고 싶으면 -->
+    <!-- <img src="image.png"> -->
+
+    <table>
+      <tr><th>출생</th><td>[출생 정보]</td></tr>
+      <tr><th>성별</th><td>[성별]</td></tr>
+      <tr><th>나이</th><td>[나이]</td></tr>
+      <tr><th>신장</th><td>[키]</td></tr>
+      <tr><th>소속</th><td>[소속]</td></tr>
+      <tr><th>등급</th><td>[주술사 등급]</td></tr>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
