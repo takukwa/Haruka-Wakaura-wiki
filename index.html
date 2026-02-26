@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>[와카우라 하루카]</title>
+<title>[캐릭터 이름]</title>
 
 <style>
 body {
@@ -36,7 +36,8 @@ body {
 /* 목차 + 인물 정보 박스 줄 */
 .top-row {
   display: flex;
-  gap: 16px;
+  justify-content: space-between; /* ⭐ 양끝으로 붙이기 */
+  align-items: flex-start;
   margin-bottom: 20px;
 }
 
@@ -62,8 +63,7 @@ body {
 
 /* 인물 정보 박스 */
 .infobox {
-  flex: 1;
-  max-width: 300px;
+  width: 300px; /* ⭐ 고정 폭 */
   border: 1px solid #a2a9b1;
   font-size: 14px;
 }
