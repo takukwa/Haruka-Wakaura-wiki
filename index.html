@@ -2,196 +2,208 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>캐릭터 위키</title>
+<title>캐릭터 이름</title>
 
 <style>
-/* ===== 기본 설정 ===== */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background: #ffffff;
-  color: #202020;
-}
-
-a {
-  color: #0275d8;
-  text-decoration: none;
-}
-
-/* ===== 전체 폭 (지금 보여준 화면이 전체의 절반 기준) ===== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* ===== 문서 제목 ===== */
-.doc-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-/* ===== 최근 수정 ===== */
-.last-edit {
-  font-size: 13px;
-  color: #777;
-  margin-bottom: 12px;
-}
-
-/* ===== 분류 ===== */
-.category {
-  font-size: 14px;
-  padding: 8px 10px;
   background: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  color: #222;
 }
 
-/* ===== 메인 레이아웃 ===== */
-.main {
-  display: flex;
-  gap: 20px;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 30px;
 }
 
-/* ===== 목차 (왼쪽) ===== */
-.toc {
-  width: 200px; /* 나무위키 목차 폭 */
-  border: 1px solid #ddd;
-  padding: 10px;
-  font-size: 14px;
-  height: fit-content;
-}
-
-.toc-title {
+/* 제목 */
+.title {
+  font-size: 42px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* 분류 */
+.category {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+/* 상단 박스 영역 (목차 + 인물박스) */
+.top-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* 목차 (슬림) */
+.toc {
+  width: 180px; /* 🔽 두께 줄임 */
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.toc h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
 }
 
 .toc ul {
   list-style: none;
-  padding-left: 0;
+  padding-left: 10px;
   margin: 0;
 }
 
 .toc li {
-  margin: 4px 0;
+  margin: 6px 0;
 }
 
-/* ===== 본문 ===== */
-.content {
-  flex: 1;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-/* ===== 인물 정보 박스 (오른쪽) ===== */
+/* 인물 정보 박스 */
 .infobox {
-  width: 360px; /* 전체 화면의 약 1/3 */
-  border: 1px solid #ddd;
+  width: 33%;
+  min-width: 350px;
   background: #fff;
+  border: 2px solid #f7931e; /* 🔶 주황 테두리 */
 }
 
 .infobox-header {
-  background: #ff9f1a; /* 나무위키 캐릭터 박스 느낌 */
-  color: #fff;
+  background: #f7931e;
+  color: white;
   text-align: center;
+  padding: 14px 10px 10px;
+}
+
+.infobox-header .name {
+  font-size: 20px;
   font-weight: 700;
-  padding: 10px;
 }
 
-.infobox-body {
-  padding: 10px;
-  font-size: 14px;
+.infobox-header .subname {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 4px;
 }
 
-.infobox-row {
-  display: flex;
-  border-top: 1px solid #eee;
+/* 이미지 */
+.infobox-image img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ddd;
 }
 
-.infobox-row:first-child {
-  border-top: none;
+/* 본문 */
+.content {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 30px;
 }
 
-.infobox-key {
-  width: 35%;
-  background: #f7f7f7;
-  padding: 6px;
-  font-weight: 600;
+.section {
+  margin-bottom: 40px;
 }
 
-.infobox-value {
-  width: 65%;
-  padding: 6px;
+.section h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
-  <!-- 문서 제목 -->
-  <div class="doc-title">캐릭터 이름</div>
-  <div class="last-edit">최근 수정 시각: XXXX-XX-XX XX:XX:XX</div>
+  <div class="title">캐릭터 이름</div>
+  <div class="subtitle">최근 수정 시각: 2026-02-26 20:00:00</div>
 
-  <!-- 분류 -->
   <div class="category">
-    분류: <a href="#">분류1</a> | <a href="#">분류2</a> | <a href="#">분류3</a>
+    분류: ○○ | ○○ | ○○
   </div>
 
-  <!-- 본문 영역 -->
-  <div class="main">
+  <!-- 상단: 목차 + 인물 박스 -->
+  <div class="top-layout">
 
-    <!-- 목차 -->
-    <aside class="toc">
-      <div class="toc-title">목차</div>
+    <div class="toc">
+      <h3>목차</h3>
       <ul>
         <li>1. 개요</li>
         <li>2. 특징</li>
-        <li>2.1 외모</li>
-        <li>2.2 성격</li>
-        <li>3. 작중 행적</li>
+        <li>3. 능력</li>
         <li>4. 인간관계</li>
+        <li>5. 여담</li>
       </ul>
-    </aside>
+    </div>
 
-    <!-- 본문 -->
-    <section class="content">
-      <h2>1. 개요</h2>
-      <p>여기에 내용을 쓰면 됩니다.</p>
+    <div class="infobox">
 
-      <h2>2. 특징</h2>
-      <p>여기도 본문 영역입니다.</p>
-    </section>
-
-    <!-- 인물 정보 박스 -->
-    <aside class="infobox">
-      <div class="infobox-header">
-        캐릭터 이름<br>
-        <small>원어 표기</small>
-      </div>
-
-      <div class="infobox-body">
-        <div class="infobox-row">
-          <div class="infobox-key">분류</div>
-          <div class="infobox-value">캐릭터</div>
-        </div>
-
-        <div class="infobox-row">
-          <div class="infobox-key">소속</div>
-          <div class="infobox-value">미정</div>
-        </div>
-
-        <div class="infobox-row">
-          <div class="infobox-key">능력</div>
-          <div class="infobox-value">미정</div>
-        </div>
-      </div>
-    </aside>
-
+    <!-- 이름 -->
+    <div class="infobox-header">
+      <div class="name">캐릭터 이름</div>
+      <div class="subname">漢字表記 | English Name</div>
+    </div>
+  
+    <!-- 이미지 -->
+    <div class="infobox-image">
+      <img src="character.jpg" alt="캐릭터 이미지">
+    </div>
+  
+    <!-- 정보 표 -->
+    <table>
+      <tr>
+        <th>출생</th>
+        <td>여기에 작성</td>
+      </tr>
+      <tr>
+        <th>성별</th>
+        <td>여기에 작성</td>
+      </tr>
+      <tr>
+        <th>나이</th>
+        <td>여기에 작성</td>
+      </tr>
+      <tr>
+        <th>소속</th>
+        <td>여기에 작성</td>
+      </tr>
+    </table>
+  
   </div>
+
+  <!-- 본문 (아래 전체 폭) -->
+  <div class="content">
+    <div class="section">
+      <h2>1. 개요</h2>
+      <p>여기에 캐릭터 설정을 작성.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. 특징</h2>
+      <p>외형, 성격 등.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. 능력</h2>
+      <p>술식, 전투 스타일 등.</p>
+    </div>
+  </div>
+
 </div>
+
 </body>
 </html>
